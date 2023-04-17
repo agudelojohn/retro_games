@@ -2,8 +2,9 @@ import { Grid, Button, Paper, Typography, Tooltip } from '@mui/material';
 import FortIcon from '@mui/icons-material/Fort';
 import ContentCutIcon from '@mui/icons-material/ContentCut';
 import ReceiptIcon from '@mui/icons-material/Receipt';
-import Head from 'next/head';
 import { useRef } from 'react';
+
+import Layout from '@components/Layout';
 
 const Rps = () => {
   const possibleValues = { rock: { value: 'Rock', icon: <FortIcon /> }, paper: { value: 'Paper', icon: <ReceiptIcon /> }, scissors: { value: 'Scissors', icon: <ContentCutIcon /> } };
@@ -74,10 +75,7 @@ const Rps = () => {
   }
 
   return (
-    <>
-      <Head>
-        <title>Rock Paper Scissors</title>
-      </Head>
+    <Layout title="Rock Paper Scissors">
       <Paper>
         <Typography variant="h2" gutterBottom>
           Computer choice: <span ref={computerChoiceRef} id="computer-choice"></span>
@@ -91,28 +89,28 @@ const Rps = () => {
         <Grid sx={{ paddingBottom: '3rem' }} container columns={3} direction="row" justifyContent="center" alignItems="center">
           <Grid item xs={1} display="flex" justifyContent="center" alignItems="center">
             <Tooltip title={possibleValues.rock.value}>
-              <Button variant="contained" id="rock" onClick={() => play(possibleValues.rock.value)}>
+              <Button variant="outlined" id="rock" onClick={() => play(possibleValues.rock.value)}>
                 {possibleValues.rock.icon}
               </Button>
             </Tooltip>
           </Grid>
           <Grid item xs={1} display="flex" justifyContent="center" alignItems="center">
             <Tooltip title={possibleValues.paper.value}>
-              <Button variant="contained" id="rock" onClick={() => play(possibleValues.paper.value)}>
+              <Button variant="outlined" id="rock" onClick={() => play(possibleValues.paper.value)}>
                 {possibleValues.paper.icon}
               </Button>
             </Tooltip>
           </Grid>
           <Grid item xs={1} display="flex" justifyContent="center" alignItems="center">
             <Tooltip title={possibleValues.scissors.value}>
-              <Button variant="contained" id="rock" onClick={() => play(possibleValues.scissors.value)}>
+              <Button variant="outlined" id="rock" onClick={() => play(possibleValues.scissors.value)}>
                 {possibleValues.scissors.icon}
               </Button>
             </Tooltip>
           </Grid>
         </Grid>
       </Paper>
-    </>
+    </Layout>
   );
 };
 

@@ -1,6 +1,5 @@
-import Link from "next/link";
-import Head from "next/head";
-import { Inter } from "next/font/google";
+import Head from 'next/head';
+import Layout from '@/components/Layout';
 
 export default function Home() {
   return (
@@ -12,11 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ul>
-          <li>
-            <Link href="/rps">Rock paper and scissors</Link>
-          </li>
-        </ul>
+        <Layout> Index </Layout>
       </main>
     </>
   );
