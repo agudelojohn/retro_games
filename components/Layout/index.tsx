@@ -24,6 +24,9 @@ const Layout: React.FC<ILayoutProps> = ({ title, children }) => {
           <li>
             <Link href="/memory">Memory game</Link>
           </li>
+          <li>
+            <Link href="/whacamole">Whac a mole</Link>
+          </li>
         </ul>
         {children}
       </Container>
